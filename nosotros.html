@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <style>
+        body {
+            background-color: white; /* Define el color de fondo del cuerpo de la página */
+            background-image: url("img/huellas.jpg");
+            background-repeat: repeat;
+            background-size: 100%;
+        
+        }
+        /* Estilos para la barra de navegación */
+        nav {
+            position: absolute; /* Posiciona el nav sobre el contenido */
+            z-index: 10; /* Asegura que la barra esté por encima de otros elementos */
+            left: 0;
+            right: 0;
+            top: 0; /* Fija el nav en la parte superior */
+            font-family: Arial, Helvetica, sans-serif; /* Define la fuente del texto */
+            padding: 0 5%; /* Añade un pequeño margen lateral */
+            height: 100px; /* Define la altura de la barra */
+            background-color: white; /* Establece el color de fondo */
+        }
+
+        /* Estilos para el logo dentro del nav */
+        .brand img {
+            width: 120px; /* Define el ancho de la imagen */
+            height: 100px; /* Define la altura de la imagen */
+        }
+
+        .brand_2 img {
+            width: 100%; /* Define el ancho de la imagen */
+            height: 100%; /* Define la altura de la imagen */
+        }
+
+        /* Configuración del logo dentro del nav */
+        nav .logo {
+            float: left; /* Alinea el logo a la izquierda */
+            width: 40%; /* Define el ancho del logo */
+            height: 100%; /* Ocupa toda la altura del nav */
+            display: flex;
+            align-items: center; /* Centra verticalmente el logo */
+            font-size: 24px; /* Tamaño del texto */
+            color: black; /* Color del texto */
+            font-weight: bold; /* Hace el texto en negrita */
+            text-transform: uppercase; /* Convierte el texto en mayúsculas */
+        }
+
+        /* Configuración de la lista de navegación */
+        nav .list {
+            float: right; /* Alinea la lista a la derecha */
+            padding: 0;
+            margin: 0;
+            width: 60%; /* Define el ancho de la lista */
+            height: 100%; /* Ocupa toda la altura del nav */
+            display: flex;
+            justify-content: space-between; /* Distribuye los elementos uniformemente */
+            align-items: center; /* Centra verticalmente los elementos */
+        }
+
+        /* Estilos para los elementos de la lista */
+        nav .list li {
+            list-style: none; /* Elimina los estilos de lista (viñetas) */
+        }
+
+        /* Estilos para los enlaces de la lista */
+        nav .list li a {
+            display: block;
+            text-transform: uppercase; /* Convierte el texto en mayúsculas */
+            padding: 15px; /* Agrega espacio alrededor del texto */
+            font-size: 16px; /* Tamaño del texto */
+            font-weight: bold; /* Texto en negrita */
+            color: palevioletred; /* Color del texto */
+            text-decoration: none; /* Elimina el subrayado */
+        }
+
+        /* Efecto al pasar el mouse sobre los enlaces */
+        nav .list li a:hover {
+            border-bottom: 4px solid palevioletred; /* Agrega una línea inferior cuando se pasa el mouse */
+        }
+
+        /* Oculta el checkbox de control del menú en móviles */
+        #toggle {
+            position: absolute;
+            top: -100px;
+        }
+
+        /* Estilos para el icono de menú hamburguesa */
+        nav .icon-bars {
+            display: none; /* Oculta el icono en pantallas grandes */
+            position: absolute;
+            right: 5%; /* Lo alinea a la derecha */
+            top: 50%; /* Lo centra verticalmente */
+            transform: translateY(-50%); /* Ajusta su posición correctamente */
+        }
+
+        /* Estilos para las líneas del icono de menú */
+        nav .icon-bars .line {
+            width: 30px;
+            height: 5px;
+            background-color: pink; /* Color de las líneas */
+            margin: 5px; /* Espacio entre las líneas */
+            border-radius: 3px; /* Bordes redondeados */
+            transition: all .3s ease-in-out; /* Agrega una animación suave */
+        }
+
+        /* Estilos para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            /* Ajusta el logo en pantallas pequeñas */
+            nav .logo {
+                float: none;
+                width: auto;
+                justify-content: center; /* Centra el logo */
+            }
+
+            /* Modifica la lista de navegación para móviles */
+            nav .list {
+                float: none;
+                position: fixed; /* Fija la lista en la pantalla */
+                z-index: 9;
+                left: 0;
+                right: 0;
+                top: 100px; /* Posiciona la lista debajo del nav */
+                bottom: 100%;
+                width: auto;
+                height: auto;
+                flex-direction: column; /* Organiza los elementos en columna */
+                justify-content: space-evenly;
+                background-color: pink; /* Cambia el fondo */
+                overflow: hidden; /* Oculta el contenido cuando el menú está cerrado */
+                transition: all .5s ease-in-out; /* Agrega animación */
+            }
+
+            /* Aumenta el tamaño de la fuente en móviles */
+            nav .list {
+                font-size: 20px;
+            }
+
+            /* Muestra la lista cuando el checkbox está activado */
+            #toggle:checked ~ .list {
+                bottom: 0;
+            }
+
+            /* Muestra el icono */
+            nav .icon-bars {
+                display: block;
+            }
+        }
+
+        .texto{
+            font-size: 40px;
+            text-align: center;
+            border-radius: 3px;
+        
+        }
+
+        .container{
+            background-color: plum; /* Color claro con ligera transparencia */
+            padding: 20px; /* Espacio interno */
+            border-radius: 10px; /* Bordes redondeados */
+            max-width: 700px; /* Ancho máximo del contenedor */
+            margin: 40px auto; /* Centrado en la página */
+            text-align: justify; /* Justificar texto */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+            font-family: 'Arial', sans-serif; /* Fuente elegante */
+        }
+        
+        .container p{
+            line-height: 1.6;
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333; /* Color de fondo */
+            color: white; /* Color del texto */
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+        
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-section p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-section a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: palevioletred; /* Color cuando pasas el mouse */
+        }
+        
+        .footer-bottom {
+            background: #222;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        
+        .footer-bottom p {
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="toggle">
+        <label for="" class="brand">
+           <a href=""><img src="img/logo.jpg" alt=""></a>
+        </label>
+       
+        <ul class="list">
+            <li><a href="aterrizaje.html">INICIO</a></li>
+            <li><a href="nosotros.html">NOSOTROS</a></li>
+            <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+            <li><a href="iniciar_sesion.html">INICIAR SESIÓN</a></li>
+        </ul>
+     
+        <label for="toggle" class="icon-bars">
+           <div class="line"></div>                                
+           <div class="line"></div>
+           <div class="line"></div>
+        </label>
+    </nav>
+
+    <label for="" class="brand_2">
+       <a href=""><img src="img/foto_5.jpg" alt=""></a>
+    </label>
+    <br>
+    <br>
+
+    <div class="container">
+      <h1 class="texto"  style="background-color: palevioletred;">MISIÓN</h1>
+      <p>
+        Brindar refugio, alimentación, atención médica y rehabilitación a perros y gatos
+        en estado de vulnerabilidad, ofreciéndoles una segunda oportunidad para vivir con 
+        dignidad. Nos enfocamos en fomentar la adopción responsable, la esterilización y la 
+        educación sobre el bienestar animal, trabajando de la mano con voluntarios, patrocinadores 
+        y la comunidad para crear un entorno más compasivo y solidario.  
+      </p>
+
+    </div>
+
+    <div class="container">
+        <h1 class="texto"  style="background-color: palevioletred;">VISIÓN</h1>
+        <p>
+            Ser una organización líder en la protección y el bienestar animal, promoviendo una
+            sociedad más consciente y comprometida con la vida de perros y gatos en situación de 
+            abandono y maltrato. Aspiramos a convertirnos en un referente de amor, cuidado y educación 
+            sobre la tenencia responsable de mascotas, logrando que cada animal rescatado encuentre 
+            un hogar digno y amoroso. 
+        </p>
+  
+    </div>
+
+    <div class="container">
+        <h1 class="texto"  style="background-color: palevioletred;">SERVICIOS QUE OFRECEMOS</h1>
+        <p>
+            <b>Rescate y rehabilitación:</b>Salvamos animales en situación de maltrato y abandono, 
+            proporcionándoles los cuidados necesarios para su recuperación. 
+            <br> 
+            <b>Albergue temporal: </b>Brindamos un hogar temporal donde los animales reciben amor 
+            y atención mientras esperan ser adoptados.  
+            <br>
+            <b> Adopción responsable:</b>Facilitamos la adopción de perros y gatos, asegurándonos 
+            de que las familias adoptantes cumplan con los requisitos adecuados para su bienestar.  
+            <br>
+            <b>Apadrinamiento de animales:</b>Permite a las personas apoyar económicamente el cuidado 
+            de un animal hasta que encuentre un hogar definitivo.  
+            <br>
+            <b>Campañas de esterilización y vacunación:</b>Promovemos la salud animal a través de jornadas 
+            gratuitas o de bajo costo para evitar la sobrepoblación y el abandono.  
+            <br>
+            <b>Educación y concienciación:</b>Organizamos charlas, talleres y campañas en escuelas 
+            y comunidades para fomentar el respeto y el cuidado de los animales.  
+            <br>
+            <b>Asistencia veterinaria:</b>Proporcionamos atención médica básica y urgencias a 
+            animales en estado crítico.  
+        </p>
+  
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Fundación Sparks</h2>
+                <p>Protegemos y damos una segunda oportunidad a perros y gatos en situación de abandono y maltrato. ¡Ayúdanos a cambiar vidas!</p>
+            </div>
+    
+            <div class="footer-section contact">
+                <h2>Contacto</h2>
+                <p><i class="fas fa-envelope"></i> contacto@sparks.org</p>
+                <p><i class="fas fa-phone"></i> +57 312 345 6789</p>
+                <p><i class="fas fa-map-marker-alt"></i> Medellín, Colombia</p>
+            </div>
+    
+            <div class="footer-section social">
+                <h2>Síguenos</h2>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fundación Sparks | Todos los derechos reservados</p>
+        </div>
+      </footer>
+     
+</body>
+</html>

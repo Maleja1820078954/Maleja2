@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Asegura que padding y border no aumenten el tamaño del elemento */
+}
+
+body {
+    background-color: white; /* Define el color de fondo del cuerpo de la página */
+    background-image: url("img/huellas.jpg");
+    background-repeat: repeat;
+    background-size: 100%;
+
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    position: absolute; /* Posiciona el nav sobre el contenido */
+    z-index: 10; /* Asegura que la barra esté por encima de otros elementos */
+    left: 0;
+    right: 0;
+    top: 0; /* Fija el nav en la parte superior */
+    font-family: Arial, Helvetica, sans-serif; /* Define la fuente del texto */
+    padding: 0 5%; /* Añade un pequeño margen lateral */
+    height: 100px; /* Define la altura de la barra */
+    background-color: white; /* Establece el color de fondo */
+}
+
+/* Estilos para el logo dentro del nav */
+.brand img {
+    width: 120px; /* Define el ancho de la imagen */
+    height: 100px; /* Define la altura de la imagen */
+}
+
+.brand_2 img {
+    width: 100%; /* Define el ancho de la imagen */
+    height: 100%; /* Define la altura de la imagen */
+}
+
+/* Configuración del logo dentro del nav */
+nav .logo {
+    float: left; /* Alinea el logo a la izquierda */
+    width: 40%; /* Define el ancho del logo */
+    height: 100%; /* Ocupa toda la altura del nav */
+    display: flex;
+    align-items: center; /* Centra verticalmente el logo */
+    font-size: 24px; /* Tamaño del texto */
+    color: black; /* Color del texto */
+    font-weight: bold; /* Hace el texto en negrita */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+
+/* Configuración de la lista de navegación */
+nav .list {
+    float: right; /* Alinea la lista a la derecha */
+    padding: 0;
+    margin: 0;
+    width: 60%; /* Define el ancho de la lista */
+    height: 100%; /* Ocupa toda la altura del nav */
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Estilos para los elementos de la lista */
+nav .list li {
+    list-style: none; /* Elimina los estilos de lista (viñetas) */
+}
+
+/* Estilos para los enlaces de la lista */
+nav .list li a {
+    display: block;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    padding: 15px; /* Agrega espacio alrededor del texto */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    color: palevioletred; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+nav .list li a:hover {
+    border-bottom: 4px solid palevioletred; /* Agrega una línea inferior cuando se pasa el mouse */
+}
+
+/* Oculta el checkbox de control del menú en móviles */
+#toggle {
+    position: absolute;
+    top: -100px;
+}
+
+/* Estilos para el icono de menú hamburguesa */
+nav .icon-bars {
+    display: none; /* Oculta el icono en pantallas grandes */
+    position: absolute;
+    right: 5%; /* Lo alinea a la derecha */
+    top: 50%; /* Lo centra verticalmente */
+    transform: translateY(-50%); /* Ajusta su posición correctamente */
+}
+
+/* Estilos para las líneas del icono de menú */
+nav .icon-bars .line {
+    width: 30px;
+    height: 5px;
+    background-color: pink; /* Color de las líneas */
+    margin: 5px; /* Espacio entre las líneas */
+    border-radius: 3px; /* Bordes redondeados */
+    transition: all .3s ease-in-out; /* Agrega una animación suave */
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    /* Ajusta el logo en pantallas pequeñas */
+    nav .logo {
+        float: none;
+        width: auto;
+        justify-content: center; /* Centra el logo */
+    }
+
+    /* Modifica la lista de navegación para móviles */
+    nav .list {
+        float: none;
+        position: fixed; /* Fija la lista en la pantalla */
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 100px; /* Posiciona la lista debajo del nav */
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column; /* Organiza los elementos en columna */
+        justify-content: space-evenly;
+        background-color: pink; /* Cambia el fondo */
+        overflow: hidden; /* Oculta el contenido cuando el menú está cerrado */
+        transition: all .5s ease-in-out; /* Agrega animación */
+    }
+
+    /* Aumenta el tamaño de la fuente en móviles */
+    nav .list {
+        font-size: 20px;
+    }
+
+    /* Muestra la lista cuando el checkbox está activado */
+    #toggle:checked ~ .list {
+        bottom: 0;
+    }
+
+    /* Muestra el icono */
+    nav .icon-bars {
+        display: block;
+    }
+}
+
+.texto_1{
+    font-size: 40px;
+    text-align: center;
+    border-radius: 3px;
+
+}
+
+.texto_2{
+    font-size: 20px;
+    color: rgb(99, 93, 93);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.info-container_2 {
+    background-color: pink; /* Color claro con ligera transparencia */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 700px; /* Ancho máximo del contenedor */
+    margin: 40px auto; /* Centrado en la página */
+    text-align: justify; /* Justificar texto */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    font-family: 'Arial', sans-serif; /* Fuente elegante */
+}
+
+.info-container_2 h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.info-container_2 p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.container{
+    background-color: plum; /* Color claro con ligera transparencia */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 700px; /* Ancho máximo del contenedor */
+    margin: 40px auto; /* Centrado en la página */
+    text-align: justify; /* Justificar texto */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    font-family: 'Arial', sans-serif; /* Fuente elegante */
+}
+
+.container p{
+    line-height: 1.6;
+    font-size: 16px;
+    color: #555;
+}
+
+footer {
+    background-color: #333; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: palevioletred; /* Color cuando pasas el mouse */
+}
+
+.footer-bottom {
+    background: #222;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}

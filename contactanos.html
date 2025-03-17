@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactanos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        .form-container {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 30px;
+            width: 350px;
+            box-shadow: 5px 5px 20px #6200ea;
+        }
+    
+        
+        table {
+            width: 100%;
+            margin: auto;
+        }
+    
+        td {
+            padding: 8px;
+        }
+    
+        label {
+        
+            display: block; 
+    
+        }
+    
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    
+        textarea{
+            width: 98%;
+            border-radius: 5px;
+            height: 100px;
+        }
+        
+        button {
+            width: 30%;
+            padding: 7px;
+            border: none;
+            background-color: #6200ea;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        
+        }
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="form-container">
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="nombre"><b>Nombre</b></label></td>
+                    <td><input type="text" required="" style="border-radius: 4px;" placeholder="Escribe tu nombre" id="nombre" name="nombre"></td>
+                </tr>
+                <tr>
+                    <td><label for="tel"><b>Celular</b></label></td>
+                    <td><input type="tel" required="" style="border-radius: 4px;" placeholder="Celular" id="tel" name="tel"></td>
+                </tr>
+                <tr>
+                    <td><label for="email"><b>Email</b></label></td>
+                    <td><input type="email" required="" style="border-radius: 4px;" placeholder="Correo" id="email" name="email"></td> 
+                </tr>
+                <tr>
+                    <td colspan="2"><strong><b style="border-radius: 4px;">Mensaje</b></strong></td> 
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <textarea style="font-family: Arial, Helvetica, sans-serif;"  name="mensaje" rows="6" cols="32" placeholder="Mensaje"></textarea><br>
+                    </td>
+                </tr> 
+               <!-- <tr>
+                    <td><label for="mensaje"><b>Mensaje</b></label></td>
+                    <td><textarea style="font-family: Arial, Helvetica, sans-serif;" id="mensaje" required="" rows="6" cols="40" placeholder="Describe brevemente" name="mensaje" rows="4" cols="30"></textarea></td>
+                </tr>/-->
+                <tr>
+                    <td colspan="10"><button type="submit" style="width: 100%;">Enviar Datos</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+</body>
+</html>
